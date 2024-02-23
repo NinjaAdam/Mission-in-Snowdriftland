@@ -1,5 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <setting name="background_color" value="#FFFFFF" />
-    <setting name="text_color" value="#000000" />
+    <!-- Example configuration settings -->
+    <setting name="autoplay" value="true" />
+    <setting name="loop" value="false" />
+    <setting name="volume" value="0.5" />
     <!-- Add more settings as needed -->
 </config>
