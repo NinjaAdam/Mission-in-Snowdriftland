@@ -10,18 +10,28 @@
 <body>
     <h1>Flash Game Emulation with Ruffle</h1>
     <div id="flash-container">
-        <!-- Embed .swf file using the <object> tag -->
+        <!-- Embed .swf file using the <object> tag with Flash and Ruffle fallback -->
         <object type="application/x-shockwave-flash" data="calendar.swf" width="800" height="600">
             <!-- Alternative content if Flash is not supported -->
-            <p>Your browser doesn't support Adobe Flash Player or Ruffle. Please make sure to enable Flash or <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>
+            <p>Your browser doesn't support Adobe Flash Player. Please <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>
         </object>
     </div>
 
-    <!-- Embed Flash player for browsers that don't support Ruffle -->
+    <!-- Embed Ruffle for browsers that don't support Flash -->
     <script>
-        if (!window.RufflePlayer) {
-            document.getElementById('flash-container').innerHTML = '<p>Your browser doesn\'t support Adobe Flash Player or Ruffle. Please make sure to enable Flash or <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>';
-        }
+        window.addEventListener("DOMContentLoaded", () => {
+            const flashContainer = document.getElementById("flash-container");
+            const ruffleContainer = document.createElement("div");
+            ruffleContainer.id = "ruffle-container";
+            flashContainer.appendChild(ruffleContainer);
+            window.RufflePlayer = RufflePlayer;
+            RufflePlayer.bootstrap([
+                {
+                    name: "calendar.swf",
+                    swf: "calendar.swf",
+                },
+            ], ruffleContainer);
+        });
     </script>
 </body>
 </html>
