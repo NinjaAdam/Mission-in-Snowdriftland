@@ -30,20 +30,13 @@
             <tr>
                 <td  align="center" valign="middle">
                     <div id="flashDiv" align="center" valign="middle">
-                        <!-- Displaying an image or some content to simulate Flash -->
-                        <img src="img/flashcontent.jpg" alt="Flash Content" height="578" width="900" border="0" />
+                        <!-- Embedding the .swf file directly -->
+                        <object type="application/x-shockwave-flash" data="calendar.swf?t=<timestamp>" width="900" height="578">
+                            <!-- Fallback content if Flash is not supported -->
+                            <img src="img/fallback_image.jpg" alt="Fallback Image" height="578" width="900" border="0" />
+                            <!-- You can provide alternative content here -->
+                        </object>
                     </div>
-                    <script type="text/javascript">
-                        // Simulating the presence of Flash
-                        var so = new SWFObject("calendar.swf?t=" + new Date().getTime(), "stage", "900px", "578px", "9", "#ffffff");
-                        so.addParam("menu",false);
-                        // Adding variables if needed
-                        // so.addVariable("l", gup( "l" ) );
-                        // so.addVariable("c", gup( "c" ) );
-                        // so.addVariable("p", gup( "p" ) );
-                        // so.addVariable("p1", gup( "p1" ) );
-                        so.write("flashDiv");
-                    </script>
                 </td> 
             </tr>   
         </table>
