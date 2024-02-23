@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission In Snowdriftland - Indie Games Edition</title>
-    <!-- Include Ruffle library -->
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <title>Ruffle Flash Game Emulation</title>
+    <!-- Include Ruffle JavaScript files from the CDN -->
+    <script src="https://cdn.ruffle.rs/ruffle/0.10.1/ruffle.js"></script>
 </head>
 <body>
-    <div id="flashDiv" align="center" valign="middle">
-        <!-- Embed SWF file using Ruffle -->
-        <embed src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
+    <h1>Flash Game Emulation with Ruffle</h1>
+    <div id="flash-container">
+        <!-- Embed .swf file using the <object> tag -->
+        <object type="application/x-shockwave-flash" data="calendar.swf" width="800" height="600">
+            <!-- Alternative content if Flash is not supported -->
+            <p>Your browser doesn't support Adobe Flash Player. Please <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>
+        </object>
     </div>
-
-    <!-- Script to initialize Ruffle -->
-    <script>
-        // Initialize Ruffle after a brief delay
-        setTimeout(function() {
-            if (typeof rufflePlayer !== 'undefined') {
-                rufflePlayer.exports.auto();
-            } else {
-                console.error('Ruffle player not found!');
-            }
-        }, 1000); // Adjust delay as needed
-    </script>
 </body>
 </html>
