@@ -9,9 +9,10 @@
 </head>
 <body>
     <div id="flashDiv" align="center" valign="middle">
-        <!-- Script to initialize Ruffle -->
+        <!-- Script to check if Ruffle is loaded and initialize it -->
         <script>
-            window.onload = function() {
+            // Function to initialize Ruffle
+            function initializeRuffle() {
                 // Check if rufflePlayer is defined
                 if (typeof rufflePlayer !== 'undefined') {
                     // Initialize Ruffle
@@ -19,7 +20,14 @@
                 } else {
                     console.error('Ruffle player not found!');
                 }
-            };
+            }
+
+            // Check if Ruffle is loaded, then initialize it
+            if (document.readyState === 'complete') {
+                initializeRuffle();
+            } else {
+                window.addEventListener('load', initializeRuffle);
+            }
         </script>
         <!-- Embed SWF file using Ruffle -->
         <embed src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
