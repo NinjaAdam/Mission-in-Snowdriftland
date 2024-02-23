@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruffle Flash Game Emulation</title>
+    <title>Flash Game Emulation</title>
     <!-- Include Ruffle JavaScript files from the CDN -->
     <script src="https://cdn.ruffle.rs/ruffle/0.10.1/ruffle.js"></script>
 </head>
@@ -13,8 +13,15 @@
         <!-- Embed .swf file using the <object> tag -->
         <object type="application/x-shockwave-flash" data="calendar.swf" width="800" height="600">
             <!-- Alternative content if Flash is not supported -->
-            <p>Your browser doesn't support Adobe Flash Player. Please <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>
+            <p>Your browser doesn't support Adobe Flash Player or Ruffle. Please make sure to enable Flash or <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>
         </object>
     </div>
+
+    <!-- Embed Flash player for browsers that don't support Ruffle -->
+    <script>
+        if (!window.RufflePlayer) {
+            document.getElementById('flash-container').innerHTML = '<p>Your browser doesn\'t support Adobe Flash Player or Ruffle. Please make sure to enable Flash or <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>';
+        }
+    </script>
 </body>
 </html>
