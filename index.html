@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission In Snowdriftland - Indie Games Edition</title>
+    <!-- Include SWFObject library -->
+    <script type="text/javascript" src="https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/misc/swfobject.js"></script>
 </head>
 <body>
     <div>
@@ -14,11 +16,13 @@
                         <!-- Use raw.githubusercontent.com URLs -->
                         <img src="https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/img/flashcontent.jpg" alt="Flash Content" height="578" width="900" border="0" />
                     </div>
-                    <script type="text/javascript" src="https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/misc/swfobject.js"></script>
                     <script type="text/javascript">
-                        var so = new SWFObject("https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/Mission-in-Snowdriftland/calendar.swf?t=" + new Date().getTime(), "stage", "900px", "578px", "9", "#ffffff");
-                        so.addParam("menu",false);
-                        so.write("flashDiv");
+                        // Wait for the document to finish loading before using SWFObject
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var so = new SWFObject("https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/Mission-in-Snowdriftland/calendar.swf?t=" + new Date().getTime(), "stage", "900px", "578px", "9", "#ffffff");
+                            so.addParam("menu",false);
+                            so.write("flashDiv");
+                        });
                     </script>
                 </td>
             </tr>
