@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-    <!-- Example configuration settings -->
-    <setting name="autoplay" value="true" />
-    <setting name="loop" value="false" />
-    <setting name="volume" value="0.5" />
-    <!-- Add more settings as needed -->
-</config>
