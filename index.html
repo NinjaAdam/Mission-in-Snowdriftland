@@ -1,46 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission In Snowdriftland - Indie Games Edition</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="language" content="en" />
-    <meta name="author" content="tons of bits" />
-    <meta name="publisher" content="tons of bits" />
-    <meta name="copyright" content="tons of bits" />
-    <meta name="robots" content="index, follow, all" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
-    <script type="text/javascript" src="misc/swfobject.js"></script>
-    <style type="text/css">
-        <!--
-        body {
-            color: #000000;
-            background-color: #ffffff;
-            margin-left: 0px;    
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-bottom: 0px;
-        }
-        -->
-    </style>
 </head>
 <body>
-    <div>     
+    <div>
         <table width="100%" height="100%" border="0">
             <tr>
-                <td  align="center" valign="middle">
+                <td align="center" valign="middle">
                     <div id="flashDiv" align="center" valign="middle">
-                        <!-- Updated image path -->
-                        <img src="img/flashcontent.jpg" alt="Flash Content" height="578" width="900" border="0" />
+                        <!-- Use raw.githubusercontent.com URLs -->
+                        <img src="https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/img/flashcontent.jpg" alt="Flash Content" height="578" width="900" border="0" />
                     </div>
+                    <script type="text/javascript" src="https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/misc/swfobject.js"></script>
                     <script type="text/javascript">
-                        var so = new SWFObject("Mission-in-Snowdriftland/calendar.swf?t=" + new Date().getTime(), "stage", "900px", "578px", "9", "#ffffff");
+                        var so = new SWFObject("https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/Mission-in-Snowdriftland/calendar.swf?t=" + new Date().getTime(), "stage", "900px", "578px", "9", "#ffffff");
                         so.addParam("menu",false);
                         so.write("flashDiv");
                     </script>
-                </td> 
-            </tr>   
+                </td>
+            </tr>
         </table>
-    </div> 
+    </div>
 </body>
 </html>
