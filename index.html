@@ -1,45 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission In Snowdriftland - Indie Games Edition</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="language" content="en" />
-    <meta name="author" content="tons of bits" />
-    <meta name="publisher" content="tons of bits" />
-    <meta name="copyright" content="tons of bits" />
-    <meta name="robots" content="index, follow, all" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
-    <script type="text/javascript" src="misc/swfobject.js"></script>
-    <style type="text/css">
-        <!--
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <style>
         body {
-            color: #000000;
-            background-color: #ffffff;
-            margin-left: 0px;    
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-bottom: 0px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        -->
+        #flash-container {
+            width: 900px; /* Adjust width as needed */
+            height: 578px; /* Adjust height as needed */
+        }
     </style>
 </head>
 <body>
-    <div>     
-        <table width="100%" height="100%" border="0">
-            <tr>
-                <td  align="center" valign="middle">
-                    <div id="flashDiv" align="center" valign="middle">
-                        <!-- Embedding the .swf file directly -->
-                        <object type="application/x-shockwave-flash" data="calendar.swf?t=<timestamp>" width="900" height="578">
-                            <!-- Fallback content if Flash is not supported -->
-                            <img src="img/fallback_image.jpg" alt="Fallback Image" height="578" width="900" border="0" />
-                            <!-- You can provide alternative content here -->
-                        </object>
-                    </div>
-                </td> 
-            </tr>   
-        </table>
-    </div> 
+    <div id="flash-container">
+        <script>
+            RufflePlayer.replaceSWF("calendar.swf", "#flash-container", {
+                "width": "100%",
+                "height": "100%"
+            });
+        </script>
+        <!-- Fallback content if Ruffle is not supported -->
+        <img src="img/fallback_image.jpg" alt="Fallback Image" style="width: 100%; height: 100%;" />
+    </div>
 </body>
 </html>
