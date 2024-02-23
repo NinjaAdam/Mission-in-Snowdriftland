@@ -3,42 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flash Game Emulation</title>
-    <!-- Include Ruffle JavaScript files from unpkg.com -->
+    <title>Mission In Snowdriftland - Indie Games Edition</title>
+    <!-- Include Ruffle library -->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
 <body>
-    <h1>Flash Game Emulation with Ruffle</h1>
-    <div id="flash-container">
-        <!-- Embed .swf file using the <embed> tag for Flash -->
-        <embed src="calendar.swf" width="800" height="600">
-            <!-- Alternative content if Flash is not supported -->
-            <p>Your browser doesn't support Adobe Flash Player. Please <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>
-        </embed>
+    <div id="flashDiv" align="center" valign="middle">
+        <!-- Embed SWF file using Ruffle -->
+        <embed src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
     </div>
 
-    <!-- Embed Ruffle for browsers that don't support Flash -->
+    <!-- Script to initialize Ruffle -->
     <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            const flashContainer = document.getElementById("flash-container");
-            const ruffleContainer = document.createElement("div");
-            ruffleContainer.id = "ruffle-container";
-            flashContainer.appendChild(ruffleContainer);
-            
-            // Check if RufflePlayer is available
-            if (window.RufflePlayer) {
-                // RufflePlayer is available, bootstrap Ruffle
-                window.RufflePlayer.bootstrap([
-                    {
-                        name: "calendar.swf",
-                        swf: "calendar.swf",
-                    },
-                ], ruffleContainer);
+        // Initialize Ruffle after a brief delay
+        setTimeout(function() {
+            if (typeof rufflePlayer !== 'undefined') {
+                rufflePlayer.exports.auto();
             } else {
-                // RufflePlayer is not available, show a message asking to install Ruffle
-                ruffleContainer.innerHTML = '<p>Your browser doesn\'t support Adobe Flash Player or Ruffle. Please make sure to enable Flash or <a href="https://ruffle.rs/#getting-started">install Ruffle</a> to play this game.</p>';
+                console.error('Ruffle player not found!');
             }
-        });
+        }, 1000); // Adjust delay as needed
     </script>
 </body>
 </html>
