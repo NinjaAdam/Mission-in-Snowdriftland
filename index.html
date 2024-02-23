@@ -15,14 +15,8 @@
 
     <!-- Script to initialize Ruffle -->
     <script>
-        // Initialize Ruffle after a brief delay
-        setTimeout(function() {
-            if (typeof rufflePlayer !== 'undefined') {
-                rufflePlayer.exports.auto();
-            } else {
-                console.error('Ruffle player not found!');
-            }
-        }, 1000); // Adjust delay as needed
+        // Initialize Ruffle
+        rufflePlayer.exports.auto();
     </script>
 </body>
 </html>
