@@ -1,47 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission In Snowdriftland - Indie Games Edition</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="language" content="en" />
-    <meta name="author" content="tons of bits" />
-    <meta name="publisher" content="tons of bits" />
-    <meta name="copyright" content="tons of bits" />
-    <meta name="robots" content="index, follow, all" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
-    <!-- Include Ruffle library -->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <style type="text/css">
-        <!--
-        body {
-            color: #000000;
-            background-color: #ffffff;
-            margin-left: 0px;    
-            margin-top: 0px;
-            margin-right: 0px;
-            margin-bottom: 0px;
-        }
-        -->
-    </style>
 </head>
 <body>
-    <div>     
-        <table width="100%" height="100%" border="0">
-            <tr>
-                <td  align="center" valign="middle">
-                    <div id="flashDiv" align="center" valign="middle">
-                        <!-- Use Ruffle to emulate Flash content -->
-                        <script>
-                            // Initialize Ruffle
-                            rufflePlayer.exports.auto();
-                        </script>
-                        <!-- Embed SWF file using Ruffle -->
-                        <embed src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
-                    </div>
-                </td> 
-            </tr>   
-        </table>
-    </div> 
+    <div id="flashDiv" align="center" valign="middle">
+        <script>
+            // Initialize Ruffle
+            rufflePlayer.exports.auto();
+        </script>
+        <!-- Embed SWF file using Ruffle -->
+        <embed src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
+    </div>
 </body>
 </html>
