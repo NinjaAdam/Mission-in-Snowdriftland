@@ -9,10 +9,8 @@
     <div id="flashDiv"></div>
 
     <script type="text/javascript">
-        var so = new SWFObject("calendar.swf?t=" + new Date().getTime(), "stage", "900", "578", "9", "#ffffff");
+        var so = new SWFObject("calendar.swf", "stage", "900", "578", "9", "#ffffff");
         so.addParam("menu", false);
-        // Add any additional parameters or variables if needed
-        // so.addVariable("paramName", "paramValue");
         so.write("flashDiv");
     </script>
 </body>
