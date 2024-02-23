@@ -10,13 +10,19 @@
 <body>
     <div id="flashDiv" align="center" valign="middle">
         <!-- Embed SWF file using Ruffle -->
-        <embed src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
+        <embed id="flashContent" src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
     </div>
 
     <!-- Script to initialize Ruffle -->
     <script>
-        // Initialize Ruffle
-        rufflePlayer.exports.auto();
+        // Check if Ruffle is loaded
+        if (window.RufflePlayer) {
+            // Initialize Ruffle
+            const rufflePlayer = new RufflePlayer();
+            rufflePlayer.load('#flashContent');
+        } else {
+            console.error('Ruffle player not found!');
+        }
     </script>
 </body>
 </html>
