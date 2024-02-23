@@ -1,0 +1,5 @@
+<config>
+    <setting name="background_color" value="#FFFFFF" />
+    <setting name="text_color" value="#000000" />
+    <!-- Add more settings as needed -->
+</config>
