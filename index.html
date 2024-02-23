@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission In Snowdriftland - Indie Games Edition</title>
-    <!-- Include SWFObject library with onload event -->
-    <script type="text/javascript" src="https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/misc/swfobject.js" defer></script>
+    <!-- Include SWFObject library -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/swfobject/2.3.20161020/swfobject.min.js" defer></script>
 </head>
 <body>
     <div>
@@ -21,12 +21,8 @@
         </table>
     </div>
     <script type="text/javascript">
-        // Debugging statement to ensure this script is executed
-        console.log('Script loaded.');
-
         // Function to create SWFObject instance
         function createSWFObject() {
-            console.log('Creating SWFObject instance...');
             var so = new SWFObject("https://raw.githubusercontent.com/ninjaadam/Mission-in-Snowdriftland/main/Mission-in-Snowdriftland/calendar.swf?t=" + new Date().getTime(), "stage", "900px", "578px", "9", "#ffffff");
             so.addParam("menu",false);
             so.write("flashDiv");
@@ -36,7 +32,6 @@
         if (typeof SWFObject === 'undefined') {
             console.error('SWFObject library not loaded.');
         } else {
-            console.log('SWFObject library loaded.');
             // Call the function to create SWFObject instance
             createSWFObject();
         }
