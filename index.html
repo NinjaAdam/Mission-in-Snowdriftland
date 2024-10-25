@@ -1,42 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Mission In Snowdriftland - Indie Games Edition</title>
-    <link rel="stylesheet" href="/static/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="/static/main.js" defer></script>
-</head>
-<body>
-    <div class="content">
-        <div class="header"></div>
-        <div class="player" id="flashDiv" align="center" valign="middle">
-            <!-- Embed SWF file using Ruffle -->
-            <embed src="calendar.swf" type="application/x-shockwave-flash" width="900" height="578">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    <head>
+        <title>UPIXO</title>
+        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script> <!-- Ruffle JS -->
+    </head>
+    <body bgcolor="#FFFFFF">
+        <div>
+            <table width="100%" height="100%">
+                <tr>
+                    <td align="center" valign="middle">
+                        <div id="flash-container">
+                            <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
+                                <img src="img/noflash.jpg" alt="GET FLASH PLAYER" height="201" width="750" border="0" />
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div class="footer">
-            <div class="navigation">
-                <div class="general">
-                    <a href="/faq">[FAQ]</a>
-                    <a href="/browse">[Browse]</a>
-                    <a href=".">[Random]</a>
-                    <div class="toggle">
-                        <input type="checkbox" id="extreme" checked><label for="extreme">Filter NSFW</label>
-                    </div>
-                </div>
-                <div class="entry">
-                    <a href="" class="info" target="_blank">[More info]</a>
-                    <a href="" class="link">[Direct link]</a>
-                </div>
-            </div>
-            <div class="compatibility">
-                <div class="rating">
-                    <b>Compatibility rating:</b> <span class="fraction">N/A</span> (<span class="total">0</span> votes)
-                </div>
-                <div class="vote">
-                    Is this entry working? <span class="button working">[Yes]</span> or <span class="button broken">[No]</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+        <script>
+            var ruffle = window.RufflePlayer.newest();
+            var container = document.getElementById("flash-container");
+            var player = ruffle.createPlayer();
+            container.appendChild(player);
+            player.load("misnowdriftland_final.swf");  // Your SWF file
+        </script>
+    </body>
 </html>
